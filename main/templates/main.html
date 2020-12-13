@@ -1,0 +1,488 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static '/css/scroll.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{%static '/css/codesnippet.css' %}">
+    {% load static %}
+    <script src="{%static '/js/codesnippet.js' %}"></script> 
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        var elements = document.getElementsByClassName("codetext");
+        for (let element of elements) {
+            createCodeSnippet(element); 
+        }
+    });
+    </script>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Python Review</h1>
+            <section id="MathOperations">
+                <h2>Math Operations</h2>
+                <p class="codetext">
+                    print(3 / 2)  # = 1.5 \n
+                    print(3 // 2)  # = 1 \n
+                    print(2 * 2 / 2)  # multiplication and division \n
+                    print(2 + 2 - 2)  # plus and minus \n
+                    print(4 % 2)  # modulus \n
+                    print(2 ** 2)  # exponents \n
+                </p>
+                <p>
+                    for more math functions, use the math module <br>
+                    https://docs.python.org/3/library/math.html <br>
+                </p>
+                <p class="codetext">
+                    import math \n
+                    print(math.pow(3, 2)) \n
+                </p>
+            </section>
+            <section id="BoolOperations">
+                <h2>Boolean Operations</h2>
+                <p class="codetext">
+                    exbool = True  \n
+                    exbool = False  \n
+                    # Comparison operators  \n
+                    exbool = x == y  \n
+                    exbool = x != y  \n
+                    exbool = x > y  \n
+                    exbool = x < y  \n
+                    exbool = x >= y  \n
+                    exbool = x <= y  \n
+                    # Logical operators  \n
+                    exbool = x < 5 and  x < 10  \n
+                    exbool = x < 5 or x < 4  \n
+                    exbool = not(x < 5 and x < 10)  \n
+                    # Object Identity operators  \n
+                    exbool = x is y  \n
+                    exbool = x is not y  \n
+                    # Checking membership \n
+                    x in list \n
+                </p>
+            </section>
+            <section id="Variables">
+                <h2>Variables</h2>
+                <p>
+                    Variables do not need to be declared with a type <br>
+                    they can change type after they have been set <br>  
+                </p>
+                <p class="codetext">
+                    x = 1  # int \n
+                    y = 2.8  # float \n
+                    z = 1j  # complex \n
+                    \n
+                    # Casting in python is done using constructor functions: \n
+                    # convert to float: \n
+                    a = float(x) \n
+                    # convert to int: \n
+                    b = int(y) \n
+                    # convert to complex: \n
+                    c = complex(x) \n
+                    # convert to string \n
+                    d = str(x) \n
+                    \n
+                    # type() returns the class type \n
+                    print(type(x)) \n
+                </p>  
+            </section>
+            <section id="Strings">
+                <h2>Strings</h2>
+                <p>
+                    Strings are objects/arrays of bytes representing unicode characters <br>
+                    Python does not have a char data type, a char is just a string of length 1 <br>
+                </p>
+                <p class="codetext">
+                    s = "hello" \n
+                    s = 'hello' \n
+                    ExStr = """ hello, this is a \n
+                    multiline string """ \n
+                </p>
+                <p class="codetext">
+                    # access characters of the string \n
+                    print(exStr[3]) \n
+                    print(exStr[-1]) \n
+                    # substring/ slicing \n
+                    print(exStr[2:5]) \n
+                </p>
+                <p class="codetext">
+                    # String Concatenation \n
+                    a = "Hello" \n
+                    b = "World" \n
+                    c = a + " " + b \n
+                    print(c) \n
+                    # F-strings embedding variables in a string \n
+                    name = 'Chris' \n
+                    num = 42 \n
+                    s = f 'My name is {name}. My favorite number is { num }.' \n
+                    print(s) \n
+                </p>
+                <p class="codetext">
+                    # String Methods \n
+                    len(s) \n
+                    s.index("llo") \n
+                    s.index("moo") # error \n 
+                    s.find("llo") \n
+                    s.find("moo") # returns -1 \n
+                    s.upper() \n
+                    s.lower() \n
+                    s.isupper() \n
+                    s.islower() \n
+                    s.isalpha()  \n
+                    s.isalnum()  \n
+                    s.isdecimal() \n
+                    s.isspace()  \n
+                    s.istitle() \n
+                    'Hello, world!'.startswith('Hello') \n
+                    'Hello, world!'.endswith('world!') \n
+                    print(' '.join(['My', 'name', 'is', 'Chris'])) \n
+                    print('My name is Chris'.split()) \n
+                </p>
+            </section> 
+            <section id="DataStructures">
+                <h2>Data Structures</h2>
+                <section id="DataStructures--List">
+                    <h3>List</h3>
+                    <p>
+                        List - can change the length of
+                    </p>
+                    <p class="codetext">
+                        # Creating a list \n
+                        ex = list("123") \n
+                        numlist = [1, 2, 3, 4] \n
+                        anotherList = [21, "moo", 21.7] \n
+                    </p>
+                    <p class="codetext">
+                        # Accessing and changing values \n
+                        num0 = numlist[0] \n
+                        numlist[0] = 5 \n
+                    </p>
+                    <p class="codetext">
+                        # List methods \n
+                        numlist.append(5) \n
+                        numlist.insert(0, 21) \n
+                        numlist.extend([0, 0, 0]) \n
+                        numlist.remove(4) \n
+                        numlist.pop(1) \n
+                        numlist.index(3) \n
+                        numlist.sort() \n
+                        otherlist = sorted(numlist) \n
+                        numlist.reverse() \n
+                        numlist.count(0) \n
+                        len(numlist) \n
+                        min(numlist) \n
+                        max(numlist) \n
+                        sum(numlist) \n
+                        anotherList = numlist.copy() \n
+                        numlist.clear() \n
+                        del anotherList[1] \n
+                    </p>
+                </section>
+                <section id="DataStructures--Tuple">
+                    <h3>Tuple</h3>
+                    <p>
+                        Tuple - cannot be changed
+                    </p>
+                    <p class="codetext">
+                        # Creating a tuple \n
+                        ex = tuple("123") \n
+                        numtuple = (1, 2, 3, 4) \n
+                        anotherTuple = (21, "moo", 21.7) \n 
+                    </p>
+                    <p class="codetext">
+                        # Accessing values  \n 
+                        num = numtuple[0]  \n 
+                        num2ndtolast = numtuple[-2]  \n 
+                    </p>
+                    <p class="codetext">
+                        # Tuple methods  \n 
+                        numtuple.count(0)  \n 
+                        numtuple.index(4)  \n 
+                        len(numtuple)  \n 
+                        min(numtuple)  \n 
+                        max(numtuple)  \n 
+                    </p>
+                    <p class="codetext">
+                        # Misc   \n 
+                        # Combining tuples *strings*   \n 
+                        numtuple2 = (0, 0, 0, 0) + (1, 2, 3, 4)   \n 
+                        # Repetition   \n 
+                        numtple4 = (1, 2, 3, 4) * 4   \n 
+                    </p>
+                </section>
+                <section id="DataStructures--Dictionary">
+                    <h3>Dictionary</h3>
+                    <p>
+                        Dictionary - key value pairs
+                    </p>
+                    <p class="codetext">
+                        # Creating a dictionary \n
+                        phoneNumbers = {"John": "555-1234", "Steve": "666-0000"} \n 
+                    </p>
+                    <p class="codetext">
+                        # Accessing entries \n 
+                        number = phoneNumbers["John"] \n 
+                        number2 = phoneNumbers.get("Steve") \n 
+                        # Methods to get a list of entries \n 
+                        x = phoneNumbers.keys() \n 
+                        y = phoneNumbers.values() \n 
+                        z = phoneNumbers.items() \n 
+                    </p>
+                    <p class="codetext">
+                        # Dictionary methods \n 
+                        # Adding entries \n 
+                        phoneNumbers["Bob"] = "111-1111" \n 
+                        phoneNumbers.update({"Steve": "333-9999"}) \n 
+                        # Removing entries \n 
+                        phoneNumbers.popitem() \n 
+                        phoneNumbers.pop("Steve") \n 
+                        del phoneNumbers["John"] \n 
+                        phoneNumbers.clear() \n 
+                        # Misc  \n  
+                        copyNumbers = phoneNumbers.copy() \n  
+                        phoneNumbers.setdefault("John", "666-6666") \n  
+                    </p>
+                </section>
+                <section id="DataStructures--Matrix">
+                    <h3>Matrix</h3>
+                    <p>
+                        Data structure inception
+                    </p>
+                    <p class="codetext">
+                        # Creating a dictionary \n
+                        matrixa = [[0, 1, 0, 0], \n
+                        \t \t  [0, 0, 0, 0], \n
+                        \t \t  [0, 0, 0, 0]] \n
+                        matrixb = [[]] \n
+                    </p>
+                    <p class="codetext">
+                        # Accessing entries \n 
+                        print(matrixa[0][1]) \n
+                    </p>
+                </section>
+            </section>
+
+            <section id="IfStatements">
+                <h2>If Statements</h2>
+                <p class="codetext">
+                    answer = input() \n
+                    correct = 12 \n
+                    score = 0 \n
+                    if answer == correct: \n
+                    \t    print("that is correct") \n
+                    \t    score += 1 \n
+                    print("thanks for playing") \n
+                </p>
+                <p class="codetext">
+                    if answer > 12: \n
+                    \t    print("lower") \n
+                    elif answer < 12:
+                    \t    print("higher") \n
+                    else: \n
+                    \t    print("correct") \n
+                </p>
+            </section>
+
+            <section id="LoopStatements">
+                <h2>Loop Statements</h2>
+                <section id="LoopStatements--While">
+                    <h3>While</h3>
+                    <p class="codetext">
+                        num = 0 \n
+                        while num < 6: \n
+                        \t    print(num) \n
+                        \t    num += 1 \n
+                    </p>
+                </section>
+                <section id="LoopStatements--For">
+                    <h3>For</h3>
+                    <p class="codetext">
+                        for i in [0, 1, 2, 3, 4, 5]: \n
+                        \t    print(i) \n
+                        for i in range(0, 6): \n
+                        \t    print(i) \n
+                        for i in range(6): \n
+                        \t    print(i)
+                        for names in ["John", "Steve", "Bob"]: \n
+                        \t    print(names) \n
+                        for i in range(0, 10, 2): \n
+                        \t    print(i) \n
+                        for i in range(6, 0, -1): \n
+                        \t    print(i) \n
+                        \n
+                        mylist = [1, 2, 3, 4] \n
+                        for i, num in enumerate(mylist): \n
+                        \t    mylist[i] = num + 4 \n
+                        print(mylist) \n
+                        \n 
+                        mylist = [1, 2, 3, 4]  \n
+                        for i in range(len(mylist)): \n
+                        \t    mylist[i] += 4 \n
+                        print(mylist)  \n
+                        \n
+                        for val in iterabledatastructure: \n
+                        \t    # Do something with each val \n
+                    </p>
+                </section>
+            </section>
+
+            <section id="Functions">
+                <h2>Functions</h2>
+                <p class="codetext">
+                    # Declare a function  \n
+                    def action():  \n
+                    \t    # Do something  \n
+                    # Call a function   \n
+                    action()  \n
+                </p>
+                <p class="codetext">
+                    # Python functions can be treated as object  \n
+                    def shout(text):  \n
+                    \t    return text.upper()  \n
+                    \n
+                    def whisper(text): \n
+                    \t    return text.lower() \n
+                    \n
+                    def greet(func): \n
+                    \t    # Storing the function in a variable \n
+                    \t    greeting = func("Hi, I am created by a function passed as an argument.") \n
+                    \t    print(greeting) \n
+                    \n
+                    greet(shout) \n
+                    greet(whisper) \n
+                </p>
+                <p class="codetext">
+                    # Optional parameters for functions \n
+                    def exfunca(a,b, *args): \n
+                    \t    for ar in args: \n
+                    \t    print ar \n
+                    exfunca(a,b,c,d,e,f) \n
+                    # This will print values of c,d,e,f \n
+                    \n
+                    # Named optional parameters for functions \n
+                    def myfunc(a,b, *args, **kwargs): \n
+                    \t    c = kwargs.get('c', None) \n
+                    \t    d = kwargs.get('d', None) \n
+                    exfuncab(a,b, c='nick', d='dog') \n
+                </p> 
+                <p class="codetext">
+                    # Map function \n
+                    # Applys a function to each item item of iterable list \n
+                    # Returns a map object for resulting list \n
+                    map(function, iterablelist) \n
+                    def double(n): \n
+                    \t    return 2 * n \n
+                    numbers = (1, 2, 3, 4) \n
+                    result = map(addition, numbers) \n
+                    print(list(result) \n
+                </p>
+                <p class="codetext">
+                    # Lambda function - mini function \n
+                    # blah = lambda arguments : expression \n
+                    x = lambda a, b : a * b \n
+                    print(x(5, 6) \n
+                </p>
+                <p class="codetext">
+                    # Filter function \n
+                    my_list = [1, 5, 4, 6, 8, 11, 3, 12] \n
+                    new_list = list(filter(lambda x: (x%2 == 0) , my_list)) \n
+                </p> 
+            </section>
+
+            <section id="Objects">
+                <h2>Objects</h2>
+                <p>
+                    User defined variables that have their owm functions <br>
+                    Objects have special methods called dunder methods ex: __init__ <br>
+                </p>
+                <p class="codetext">
+                    class Coordinate: \n
+                    \t    def __init__(self, x=0, y=0): \n
+                    \t   \t     self.xpos = x \n
+                    \t   \t     self.ypos = y \n
+                            \n
+                    \t    def __eq__(self, other): \n
+                    \t   \t     if not isinstance(other, Coordinate): \n
+                    \t   \t   \t    return False \n
+                    \t   \t     return other.xpos == self.xpos and other.ypos == self.ypos \n
+                </p>
+                <p class="codetext">
+                    # You can have more than one class in a file \n
+                    class Person: \n
+                    \t    # Constructor \n
+                    \t    def __init__(self, name, age): \n
+                    \t   \t     self.name = name \n
+                    \t   \t     self.age = age \n
+                    \t    # Printing as string \n
+                    \t    def __repr__(self): \n
+                    \t   \t     msg0 = " Name: " + self.name \n
+                    \t   \t     msg1 = " Age: {}" \n
+                    \t   \t     msg1 = msg1.format(self.age) \n
+                    \t   \t     return msg0 + msg1 \n
+                            \n
+                    # Inheritance \n
+                    class Student(Person): \n
+                    \t    def __init__(self, name, age, classnum): \n
+                    \t   \t     super().__init__(name, age) \n
+                    \t   \t     self.classnum = classnum \n
+                    \t    def __repr__(self): \n
+                    \t   \t     msg0 = Person.__str__(self) \n
+                    \t   \t     msg1 = " Class: {}" \n
+                    \t   \t     msg1 = msg1.format(self.classnum) \n
+                    \t   \t     return msg0 + msg1 \n
+                            \n
+                    class Employee: \n
+                    \t   def __init__(self, position, salary): \n
+                    \t   \t     self.position = position \n
+                    \t   \t     self.salary = salary \n
+                    \t   def __repr__(self): \n
+                    \t   \t     msg0 = " Position:" + self.position \n
+                    \t   \t     msg1 = " Salary: {}" \n
+                    \t   \t     msg1 = msg1.format(self.salary) \n
+                    \t   \t     return msg0 + msg1 \n
+                            \n
+                    # Multiple Inheritance \n
+                    class Teacher(Person, Employee): \n
+                    \t   def __init__(self, name, age, salary): \n
+                    \t   \t     Person.__init__(self, name, age) \n
+                    \t   \t     Employee.__init__(self, "Teacher", salary) \n
+                    \t   def __repr__(self): \n
+                    \t   \t     msg0 = Person.__repr__(self) \n
+                    \t   \t     msg1 = Employee.__repr__(self) \n
+                    \t   \t     return msg0 + msg1 \n
+
+                </p>
+            </section>
+        </div>
+        <nav class="section-nav">
+            <ol>
+                <li><a href="#MathOperations">Math Operations</a></li>
+                <li><a href="#BoolOperations">Boolean Operations</a></li>
+                <li><a href="#Variables">Variables</a></li>
+                <li><a href="#Strings">Strings</a></li>
+                <li><a href="#DataStructures">Data Structures</a>
+                    <ul>
+                        <li><a href="#DataStructures--List">List</a></li>
+                        <li><a href="#DataStructures--Tuple">Tuple</a></li>
+                        <li><a href="#DataStructures--Dictionary">Dictionary</a></li>
+                        <li><a href="#DataStructures--Matrix">Matrix</a></li>
+                    </ul>
+                </li>
+                <li><a href="#IfStatements">If Statements</a></li>
+                <li><a href="#LoopStatements">Loop Statements</a>
+                    <ul>
+                        <li><a href="#LoopStatements--While">While</a></li>
+                        <li><a href="#LoopStatements--For">For</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Functions">Functions</a></li>
+                <li><a href="#Objects">Objects</a></li>
+            </ol>
+        </nav>
+    </main>
+</body>
+</html>
+

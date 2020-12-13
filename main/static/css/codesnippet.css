@@ -1,0 +1,25 @@
+.codeeditor{
+    display: inline-flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+.codeeditortext{
+    padding: 10px; 
+}
+.codeeditortext > li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.codeeditorsidebar{
+    background-color: gray;
+    padding: 10px;
+    text-align: right;
+}
+.tab{
+    width: 2em;
+    height: 1em;
+}
